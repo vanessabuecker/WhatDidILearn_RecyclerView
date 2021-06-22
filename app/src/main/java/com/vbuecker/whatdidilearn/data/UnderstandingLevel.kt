@@ -1,7 +1,9 @@
 package com.vbuecker.whatdidilearn.data
 
-enum class UnderstandingLevel{
-    LOW(),
-    MEDIUM(),
-    HIGH()
+import com.vbuecker.whatdidilearn.R
+
+enum class UnderstandingLevel (val color : Int){
+    LOW(R.color.p_light),
+    MEDIUM(R.color.p_darker),
+    HIGH(R.color.primary_color)
 }

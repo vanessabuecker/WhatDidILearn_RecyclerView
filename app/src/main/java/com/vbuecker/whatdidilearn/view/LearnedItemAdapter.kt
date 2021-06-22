@@ -42,9 +42,9 @@ class LearnedItemAdapter : RecyclerView.Adapter<LearnedItemAdapter.LearnedItemVi
             descriptionContainer.text = learnedItem.description
 
             when (learnedItem.understandingLevel.toString()) {
-                "LOW" -> viewInflate.setBackgroundResource(R.color.red)
-                "HIGH" -> viewInflate.setBackgroundResource(R.color.green)
-                "MEDIUM" -> viewInflate.setBackgroundResource(R.color.yellow)
+                "LOW" -> viewInflate.setBackgroundResource(R.color.p_light)
+                "HIGH" -> viewInflate.setBackgroundResource(R.color.primary_color)
+                "MEDIUM" -> viewInflate.setBackgroundResource(R.color.p_darker)
             }
         }
     }

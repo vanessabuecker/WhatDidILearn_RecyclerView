@@ -12,5 +12,15 @@
     <color name="red">#BC0808</color>
     <color name="yellow">#EFB916</color>
     <color name="green">#E60D8005</color>
+    <color name="gray">#E6545A5C</color>
+    <color name="gray_light">#E6939392</color>
+    <color name="blue_light">#E8E7F6F8</color>
+    <color name="blue_darker">#E81A6F7A</color>
+
+   <!-- Themes-->
+    <color name="p_light">#26a69a</color>
+    <color name="p_darker">#00766c</color>
+    <color name="primary_color">#64d8cb</color>
+
 
 </resources>

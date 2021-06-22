@@ -1,6 +1,6 @@
 package com.vbuecker.whatdidilearn
 
-import android.R
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.vbuecker.whatdidilearn.data.LearnedItemDataBase
@@ -16,9 +16,15 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        supportActionBar?.title = "What did I Learned"
+
+        binding.floatingActionButton.setOnClickListener {
+            val intent = Intent(this, SecondActivity::class.java)
+            startActivity(intent)
+        }
         val recycler = binding.recyclerView
         val adapter = LearnedItemAdapter()
-        adapter.learnedItems = LearnedItemDataBase().getAll()
+        adapter.learnedItems = LearnedItemDataBase.getAll()
         recycler.adapter = adapter
     }
 
