@@ -3,7 +3,7 @@ package com.vbuecker.whatdidilearn
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.vbuecker.whatdidilearn.data.LearnedItemDataBase
+import androidx.lifecycle.Observer
 import com.vbuecker.whatdidilearn.databinding.ActivityMainBinding
 import com.vbuecker.whatdidilearn.view.LearnedItemAdapter
 
@@ -24,8 +24,18 @@ class MainActivity : AppCompatActivity() {
         }
         val recycler = binding.recyclerView
         val adapter = LearnedItemAdapter()
-        adapter.learnedItems = LearnedItemDataBase.getAll()
         recycler.adapter = adapter
+
+        val database = (application as WhatDidIlearnedApplication).database
+        val items = database.learnedItemDao().getAll()
+
+        items.observe(this, Observer{
+            adapter.learnedItems = it })
+
+        binding.floatingActionButton.setOnClickListener {
+            val intent = Intent(this, SecondActivity::class.java)
+            startActivity(intent)
+        }
     }
 
 }
