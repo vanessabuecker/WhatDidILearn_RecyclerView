@@ -1,4 +1,4 @@
-package com.vbuecker.whatdidilearn.data
+package com.vbuecker.whatdidilearn.entities
 
 import com.vbuecker.whatdidilearn.R
 

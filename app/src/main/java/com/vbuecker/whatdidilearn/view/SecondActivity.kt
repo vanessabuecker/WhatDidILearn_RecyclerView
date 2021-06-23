@@ -1,9 +1,10 @@
-package com.vbuecker.whatdidilearn
+package com.vbuecker.whatdidilearn.view
 
 import android.os.Bundle
 import android.widget.Button
 import android.widget.RadioGroup
 import androidx.appcompat.app.AppCompatActivity
+import com.vbuecker.whatdidilearn.R
 
 class SecondActivity : AppCompatActivity() {
 

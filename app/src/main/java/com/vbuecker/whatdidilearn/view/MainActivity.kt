@@ -1,11 +1,11 @@
-package com.vbuecker.whatdidilearn
+package com.vbuecker.whatdidilearn.view
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
+import com.vbuecker.whatdidilearn.WhatDidIlearnedApplication
 import com.vbuecker.whatdidilearn.databinding.ActivityMainBinding
-import com.vbuecker.whatdidilearn.view.LearnedItemAdapter
 
 
 class MainActivity : AppCompatActivity() {
@@ -26,8 +26,8 @@ class MainActivity : AppCompatActivity() {
         val adapter = LearnedItemAdapter()
         recycler.adapter = adapter
 
-        val database = (application as WhatDidIlearnedApplication).database
-        val items = database.learnedItemDao().getAll()
+        val repository = (application as WhatDidIlearnedApplication).repository
+        val items = repository.learnedItem
 
         items.observe(this, Observer{
             adapter.learnedItems = it })

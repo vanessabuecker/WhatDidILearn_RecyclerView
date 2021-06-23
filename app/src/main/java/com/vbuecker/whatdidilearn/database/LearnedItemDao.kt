@@ -1,9 +1,10 @@
-package com.vbuecker.whatdidilearn.data
+package com.vbuecker.whatdidilearn.database
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
+import com.vbuecker.whatdidilearn.entities.LearnedItem
 
 @Dao
 interface LearnedItemDao {

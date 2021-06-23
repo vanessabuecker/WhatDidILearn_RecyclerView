@@ -1,6 +1,7 @@
-package com.vbuecker.whatdidilearn.data
+package com.vbuecker.whatdidilearn.database
 
 import androidx.room.TypeConverter
+import com.vbuecker.whatdidilearn.entities.UnderstandingLevel
 
 class Converters {
     @TypeConverter
