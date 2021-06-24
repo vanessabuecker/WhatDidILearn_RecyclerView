@@ -6,7 +6,6 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import androidx.sqlite.db.SupportSQLiteDatabase
-import com.vbuecker.whatdidilearn.database.LearnedItemDao
 import com.vbuecker.whatdidilearn.entities.LearnedItem
 import com.vbuecker.whatdidilearn.entities.UnderstandingLevel
 import kotlinx.coroutines.CoroutineScope

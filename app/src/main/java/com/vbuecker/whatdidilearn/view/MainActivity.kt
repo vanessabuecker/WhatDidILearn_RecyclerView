@@ -4,9 +4,11 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.vbuecker.whatdidilearn.WhatDidIlearnedApplication
 import com.vbuecker.whatdidilearn.databinding.ActivityMainBinding
-
+import com.vbuecker.whatdidilearn.viewmodel.MainViewModel
+import com.vbuecker.whatdidilearn.viewmodel.ViewModelFactory
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
@@ -15,8 +17,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        supportActionBar?.title = "What did I Learned"
 
         binding.floatingActionButton.setOnClickListener {
             val intent = Intent(this, SecondActivity::class.java)
@@ -27,10 +27,14 @@ class MainActivity : AppCompatActivity() {
         recycler.adapter = adapter
 
         val repository = (application as WhatDidIlearnedApplication).repository
-        val items = repository.learnedItem
 
-        items.observe(this, Observer{
-            adapter.learnedItems = it })
+        val viewModelFactoy = ViewModelFactory(repository)
+        val viewModel = ViewModelProvider(this, viewModelFactoy).get(MainViewModel::class.java)
+        val items = viewModel.learnedItem
+
+        items.observe(this, Observer {
+            adapter.learnedItems = it
+        })
 
         binding.floatingActionButton.setOnClickListener {
             val intent = Intent(this, SecondActivity::class.java)
