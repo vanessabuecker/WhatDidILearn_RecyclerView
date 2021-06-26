@@ -11,9 +11,9 @@ data class LearnedItem(
     @ColumnInfo(name = "item_id")
     val id: Int = 0,
     @ColumnInfo(name = "item_name")
-    val name: String,
+    var name: String,
     @ColumnInfo(name = "item_description")
-    val description: String,
+    var description: String,
     @ColumnInfo(name = "item_level")
     val understandingLevel: UnderstandingLevel
 

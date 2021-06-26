@@ -19,9 +19,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.floatingActionButton.setOnClickListener {
-            val intent = Intent(this, SecondActivity::class.java)
+            val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
+
         val recycler = binding.recyclerView
         val adapter = LearnedItemAdapter()
         recycler.adapter = adapter
@@ -33,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         })
 
         binding.floatingActionButton.setOnClickListener {
-            val intent = Intent(this, SecondActivity::class.java)
+            val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
     }

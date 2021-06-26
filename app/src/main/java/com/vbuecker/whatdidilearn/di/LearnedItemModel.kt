@@ -3,6 +3,7 @@ package com.vbuecker.whatdidilearn.di
 import com.vbuecker.whatdidilearn.data.LearnedItemRepository
 import com.vbuecker.whatdidilearn.database.LearnedItemDataBase
 import com.vbuecker.whatdidilearn.viewmodel.MainViewModel
+import com.vbuecker.whatdidilearn.viewmodel.RegisterViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -27,6 +28,8 @@ object LearnedItemModel {
         }
 
         viewModel { MainViewModel(get()) }
+        viewModel { RegisterViewModel(get()) }
     }
+
 
 }
